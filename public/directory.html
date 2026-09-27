@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Directory | RECABN Alumni Association</title>
+    <link rel="stylesheet" href="style.css?v=9">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+</head>
+<body>
+    <!-- Top Sticky Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-text">
+                    <span class="logo-title">RECABN RAA</span>
+                    <span class="logo-subtitle">Alumni Directory</span>
+                </div>
+            </a>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <nav class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="directory.html" class="active">Alumni Directory</a>
+                <a href="opportunities.html">Opportunities & Jobs</a>
+                <a href="transparency.html">Financials & Transparency</a>
+                <a href="index.html#register" class="nav-btn-primary">Register / Join</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main style="padding-top: 100px; max-width: 1200px; margin: 0 auto; padding-left: 20px; padding-right: 20px;">
+        <section style="text-align: center; margin-bottom: 40px;">
+            <h1 style="font-size: 2.2rem; color: #0f172a; margin-bottom: 10px;">Verified Alumni Directory</h1>
+            <p style="color: #64748b;">Connect with graduates across batches, companies, and regions.</p>
+        </section>
+
+        <!-- Search & Filter Controls -->
+        <div style="background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0; margin-bottom: 30px; display: flex; gap: 15px; flex-wrap: wrap;">
+            <input type="text" id="search-input" placeholder="Search by name, company, or role..." style="flex: 1; min-width: 250px; padding: 12px 16px; border: 1px solid #cbd5e1; border-radius: 8px;">
+            <select id="branch-filter" style="padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; background: white;">
+                <option value="">All Branches</option>
+                <option value="Information Technology">Information Technology</option>
+                <option value="Electrical Engineering">Electrical Engineering</option>
+                <option value="Civil Engineering">Civil Engineering</option>
+            </select>
+            <select id="chapter-filter" style="padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; background: white;">
+                <option value="">All Regions</option>
+                <option value="NCR">NCR Region</option>
+                <option value="UP">UP (Excl. NCR)</option>
+                <option value="Overseas">Overseas</option>
+            </select>
+        </div>
+
+        <!-- Directory Cards Container -->
+        <div id="directory-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-bottom: 60px;">
+            <div style="text-align: center; grid-column: 1/-1; padding: 40px; color: #64748b;">
+                <i class="fa-solid fa-spinner fa-spin fa-2x"></i>
+                <p style="margin-top: 10px;">Loading verified alumni records...</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="app.js?v=14"></script>
+</body>
+</html>

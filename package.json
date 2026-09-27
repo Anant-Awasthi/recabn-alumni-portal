@@ -1,0 +1,24 @@
+{
+  "name": "recabn-alumni-association",
+  "version": "1.0.0",
+  "description": "Premium microsite for the RECABN Alumni Association (RAA), deployed on Firebase Hosting.",
+  "main": "public/index.html",
+  "scripts": {
+    "dev": "http-server public -p 3000 -c-1",
+    "start": "http-server public -p 3000 -c-1",
+    "deploy": "firebase deploy"
+  },
+  "keywords": [
+    "recabn",
+    "raa",
+    "nit-calicut",
+    "alumni",
+    "firebase"
+  ],
+  "author": "RECABN RAA",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

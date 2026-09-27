@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RECABN Alumni Association (RAA) - Institutional Alumni Network</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Proposed alumni network portal of Rajkiya Engineering College, Ambedkar Nagar. Fostering connections and supporting institutional growth.">
+  <meta name="keywords" content="RECABN, Rajkiya Engineering College Ambedkar Nagar, RAA, REC Ambedkar Nagar Alumni, AKTU Alumni, UP Government College">
+  <meta name="author" content="RECABN Alumni Network">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css?v=14">
+
+  <!-- Firebase App & Firestore Client SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+
+  <!-- Top Sticky Navbar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <div class="crest-placeholder">
+          <i class="fa-solid fa-building-columns"></i>
+        </div>
+        <div class="logo-text">
+          <span class="logo-title">RECABN RAA</span>
+          <span class="logo-subtitle">Alumni Network Framework</span>
+        </div>
+      </a>
+      
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="directory.html">Alumni Directory</a>
+        <a href="opportunities.html">Opportunities &amp; Jobs</a>
+        <a href="transparency.html">Financials &amp; Transparency</a>
+        <a href="#register">Register / Join</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#register" class="btn btn-primary btn-sm">Register / Join</a>
+        <button class="mobile-toggle" id="mobile-toggle" type="button" aria-label="Toggle navigation" aria-controls="nav-links" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 1. Hero Section -->
+  <section id="hero" class="hero-section">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <h1 class="hero-title">Connecting Graduates.<br>Empowering Students.<br>Building Legacy.</h1>
+        <p class="hero-subtitle">
+          The RECABN Alumni Association connects graduates, mentors current students, and strengthens the professional community of Rajkiya Engineering College, Ambedkar Nagar.
+        </p>
+        <div class="hero-buttons">
+          <a href="#register" class="btn btn-primary">Register / Join</a>
+          <a href="directory.html" class="btn btn-secondary">Alumni Directory</a>
+        </div>
+      </div>
+      <div class="hero-shield">
+        <div class="institutional-seal">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <span class="seal-text">ESTD 2010</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Join -->
+  <section id="benefits" class="benefits-section scroll-reveal">
+    <div class="container">
+      <div class="section-title-block">
+        <span class="section-tag tag-official"><i class="fa-solid fa-lightbulb"></i> Why Join</span>
+        <h2 class="section-title">Benefits of the Alumni Network</h2>
+        <div class="divider"></div>
+        <p class="section-desc">A focused professional community for graduates, students, and the college.</p>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fa-solid fa-network-wired"></i></div>
+          <h3>Graduate Networking</h3>
+          <p>Provides peer-to-peer professional networking for RECABN graduates across batches, supporting career transitions and industry collaboration.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <h3>Student Guidance</h3>
+          <p>Enables experienced alumni to deliver voluntary advisory support, sharing career prep insights with B.Tech students.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fa-solid fa-circle-nodes"></i></div>
+          <h3>Institutional Advisory</h3>
+          <p>Shares industry feedback and technological trends to assist the college in aligning B.Tech program preparations with current trends.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fa-solid fa-id-card"></i></div>
+          <h3>Verified Records</h3>
+          <p>Maintains a secure, verified registration database to keep official batch-wide communication records and academic links intact.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <!-- Notable Alumni Showcase Section -->
+<section id="spotlight" class="spotlight-section scroll-reveal" style="padding: 60px 20px; background: #f8fafc;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+      
+      <!-- Section Header with PDF Download Link -->
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; margin-bottom: 30px;">
+          <div>
+              <span class="badge">Verified Alumni Showcase</span>
+              <h2 style="font-size: 2rem; color: #0f172a; margin-top: 5px;">Notable Alumni</h2>
+          </div>
+          <!-- PDF Compendium Button (As requested in feedback note) -->
+          <a href="assets/Notable_Alumni_Compendium.pdf" download target="_blank" style="background: #ffffff; color: #0f172a; border: 1px solid #cbd5e1; padding: 10px 18px; border-radius: 8px; text-decoration: none; font-size: 0.9rem; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+              <i class="fa-solid fa-file-pdf" style="color: #dc2626; font-size: 1.1rem;"></i> Download Alumni PDF
+          </a>
+      </div>
+
+      <!-- Alumni Interactive Photo Cards Grid -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+          
+          <!-- Card 1 -->
+          <div style="background: white; border-radius: 12px; border: 1px solid #e2e8f0; padding: 20px; text-align: center; transition: transform 0.2s;">
+              <div style="width: 90px; height: 90px; border-radius: 50%; background: #e2e8f0; margin: 0 auto 15px auto; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 3px solid #0f172a;">
+                  <i class="fa-solid fa-user-tie" style="font-size: 2.5rem; color: #64748b;"></i>
+              </div>
+              <h3 style="font-size: 1.1rem; color: #0f172a; margin-bottom: 2px;">Alumnus Profile 1</h3>
+              <p style="color: #0284c7; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px;">Senior Software Engineer</p>
+              <p style="color: #64748b; font-size: 0.85rem; margin-bottom: 15px;">Information Technology | Class of 2018</p>
+              <a href="directory.html" style="color: #0f172a; text-decoration: none; font-size: 0.85rem; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">View Profile <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+
+          <!-- Card 2 -->
+          <div style="background: white; border-radius: 12px; border: 1px solid #e2e8f0; padding: 20px; text-align: center; transition: transform 0.2s;">
+              <div style="width: 90px; height: 90px; border-radius: 50%; background: #e2e8f0; margin: 0 auto 15px auto; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 3px solid #0f172a;">
+                  <i class="fa-solid fa-user-gear" style="font-size: 2.5rem; color: #64748b;"></i>
+              </div>
+              <h3 style="font-size: 1.1rem; color: #0f172a; margin-bottom: 2px;">Alumnus Profile 2</h3>
+              <p style="color: #0284c7; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px;">Executive Engineer (Public Sector)</p>
+              <p style="color: #64748b; font-size: 0.85rem; margin-bottom: 15px;">Electrical Engineering | Class of 2017</p>
+              <a href="directory.html" style="color: #0f172a; text-decoration: none; font-size: 0.85rem; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">View Profile <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+
+          <!-- Card 3 -->
+          <div style="background: white; border-radius: 12px; border: 1px solid #e2e8f0; padding: 20px; text-align: center; transition: transform 0.2s;">
+              <div style="width: 90px; height: 90px; border-radius: 50%; background: #e2e8f0; margin: 0 auto 15px auto; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 3px solid #0f172a;">
+                  <i class="fa-solid fa-user-astronaut" style="font-size: 2.5rem; color: #64748b;"></i>
+              </div>
+              <h3 style="font-size: 1.1rem; color: #0f172a; margin-bottom: 2px;">Alumnus Profile 3</h3>
+              <p style="color: #0284c7; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px;">Tech Founder & CEO</p>
+              <p style="color: #64748b; font-size: 0.85rem; margin-bottom: 15px;">Civil Engineering | Class of 2016</p>
+              <a href="directory.html" style="color: #0f172a; text-decoration: none; font-size: 0.85rem; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">View Profile <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+
+      </div>
+  </div>
+</section>
+
+  <!-- 10. Registration Form / Connect -->
+  <section id="register" class="registration-section scroll-reveal">
+    <div class="container">
+      <div class="reg-container-grid">
+        <div class="reg-intro-text">
+          <span class="section-tag tag-draft text-gold"><i class="fa-solid fa-file-signature"></i> Verified Alumni Registry</span>
+          <h2 class="section-title text-white">Join the Alumni Registry</h2>
+          <div class="divider left gold-divider"></div>
+          <p class="text-light">
+            If you are a graduate of REC Ambedkar Nagar, submit your credentials here. This helps build a secure database to coordinate future initiatives. All submissions are subject to verification against official college records.
+          </p>
+          <div class="requirements-box">
+            <h4>Verification Prerequisites:</h4>
+            <ul>
+              <li><i class="fa-solid fa-square-check"></i> Completion of B.Tech program from REC Ambedkar Nagar.</li>
+              <li><i class="fa-solid fa-square-check"></i> Verification of Roll Number / Enrollment credentials.</li>
+              <li><i class="fa-solid fa-square-check"></i> Compliance with the institution's conduct policy.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="reg-form-panel">
+          <div class="institutional-card">
+            <h3>Expression of Interest</h3>
+            <p class="form-desc">Please provide your academic and professional credentials to register your interest in the proposed network. All entries are verified against college records.</p>
+            
+            <!-- Inline success/error message banner -->
+            <div id="form-message-banner" class="form-message-banner" style="display: none; margin-bottom: 20px; padding: 12px; border-radius: var(--border-radius); font-size: 0.85rem; line-height: 1.5;"></div>
+
+            <form id="registration-form" novalidate>
+              <!-- Section 1: Basic & Contact Details -->
+              <div class="form-section">
+                <h4 class="form-section-title"><i class="fa-solid fa-user"></i> Basic & Contact Details</h4>
+                
+                <div class="form-group">
+                  <label for="reg-name">Full Name *</label>
+                  <input type="text" id="reg-name" required placeholder="Enter full name (as per college records)">
+                  <div class="form-feedback" id="feedback-reg-name"></div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="reg-email">Personal Email Address *</label>
+                    <input type="email" id="reg-email" required placeholder="e.g., name@domain.com">
+                    <div class="form-feedback" id="feedback-reg-email"></div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="reg-mobile">Mobile Number *</label>
+                    <input type="tel" id="reg-mobile" required placeholder="10-digit mobile number">
+                    <div class="form-feedback" id="feedback-reg-mobile"></div>
+                  </div>
+                </div>
+
+                <div class="form-group form-checkbox-group" style="margin-top: 10px;">
+                  <label class="checkbox-container" style="display: flex; gap: 10px; align-items: center; font-weight: normal; font-size: 0.8rem; color: var(--text-sub); cursor: pointer;">
+                    <input type="checkbox" id="reg-whats-opt-in" checked style="width: auto; margin-top: 0; cursor: pointer;">
+                    <span>Opt-in to be added to the official WhatsApp & Telegram Alumni Groups</span>
+                  </label>
+                  <span style="font-size: 0.72rem; color: var(--text-muted); margin-left: 26px; display: block; margin-top: 2px;"><i class="fa-solid fa-shield-halved" style="color: var(--accent); margin-right: 4px;"></i> Note: To prevent spam, invite links are shared privately after database verification.</span>
+                </div>
+              </div>
+
+              <!-- Section 2: Academic Details -->
+              <div class="form-section">
+                <h4 class="form-section-title"><i class="fa-solid fa-graduation-cap"></i> Academic Details</h4>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="reg-roll">University Roll Number *</label>
+                    <input type="text" id="reg-roll" required placeholder="Enter Roll Number (for verification)">
+                    <div class="form-feedback" id="feedback-reg-roll"></div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="reg-branch">Engineering Branch *</label>
+                    <select id="reg-branch" required>
+                      <option value="">Select Branch</option>
+                      <option value="Information Technology">Information Technology</option>
+                      <option value="Electrical Engineering">Electrical Engineering</option>
+                      <option value="Civil Engineering">Civil Engineering</option>
+                    </select>
+                    <div class="form-feedback" id="feedback-reg-branch"></div>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="reg-batch">Graduation Year *</label>
+                    <select id="reg-batch" required>
+                      <option value="">Select Graduation Year</option>
+                      <option value="2014">2014 (First Graduating Batch)</option>
+                      <option value="2015">2015</option>
+                      <option value="2016">2016</option>
+                      <option value="2017">2017</option>
+                      <option value="2018">2018</option>
+                      <option value="2019">2019</option>
+                      <option value="2020">2020</option>
+                      <option value="2021">2021</option>
+                      <option value="2022">2022</option>
+                      <option value="2023">2023</option>
+                      <option value="2024">2024</option>
+                      <option value="2025">2025</option>
+                      <option value="2026">2026</option>
+                    </select>
+                    <div class="form-feedback" id="feedback-reg-batch"></div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="reg-admission-type">Admission Type</label>
+                    <select id="reg-admission-type">
+                      <option value="Regular">Regular</option>
+                      <option value="Lateral Entry">Lateral Entry</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Section 3: Professional & Current Status -->
+              <div class="form-section">
+                <h4 class="form-section-title"><i class="fa-solid fa-briefcase"></i> Professional Details</h4>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="reg-status">Current Status *</label>
+                    <select id="reg-status" required>
+                      <option value="">Select Current Status</option>
+                      <option value="Employed">Employed (Corporate / Gov / PSU)</option>
+                      <option value="Higher Studies">Higher Studies (M.Tech / MBA / Ph.D)</option>
+                      <option value="Entrepreneur">Entrepreneur / Startup Founder</option>
+                      <option value="Preparing for Exams">Preparing for Exams (UPSC / GATE)</option>
+                      <option value="Self-employed">Self-employed / Family Business</option>
+                      <option value="Other">Not Currently Working / Other</option>
+                    </select>
+                    <div class="form-feedback" id="feedback-reg-status"></div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="reg-city">Current City *</label>
+                    <input type="text" id="reg-city" required placeholder="Current city of residence">
+                    <div class="form-feedback" id="feedback-reg-city"></div>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="reg-company">Organization Name (Optional)</label>
+                    <input type="text" id="reg-company" placeholder="e.g. TCS, AKTU, self-employed">
+                  </div>
+                  <div class="form-group">
+                    <label for="reg-designation">Designation / Role / Course (Optional)</label>
+                    <input type="text" id="reg-designation" placeholder="e.g. Software Engineer, IAS Officer">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="reg-linkedin">LinkedIn Profile URL (Optional)</label>
+                  <input type="url" id="reg-linkedin" placeholder="https://linkedin.com/in/username">
+                  <div class="form-feedback" id="feedback-reg-linkedin"></div>
+                </div>
+              </div>
+
+              <!-- Section 4: Alumni Engagement & Support -->
+              <div class="form-section">
+                <h4 class="form-section-title"><i class="fa-solid fa-handshake-angle"></i> Alumni Engagement</h4>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="reg-contribute">Willing to contribute to Alma Mater? *</label>
+                    <select id="reg-contribute" required>
+                      <option value="Yes">Yes, I am willing</option>
+                      <option value="Maybe in future">Maybe in the future</option>
+                      <option value="No">No, not at this time</option>
+                    </select>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="reg-spotlight">Opt-in for Alumni Success Spotlights? *</label>
+                    <select id="reg-spotlight" required>
+                      <option value="Yes">Yes, interested</option>
+                      <option value="Maybe later">Maybe later</option>
+                      <option value="No">No, thank you</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group" id="contribution-checkboxes-group" style="margin-top: 10px;">
+                  <label style="margin-bottom: 8px; display: block;">How would you like to contribute? (Select all that apply)</label>
+                  <div class="checkbox-grid">
+                    <label class="checkbox-container">
+                      <input type="checkbox" name="contribution" value="Career Guidance / Mentorship">
+                      <span>Career Guidance / Mentorship</span>
+                    </label>
+                    <label class="checkbox-container">
+                      <input type="checkbox" name="contribution" value="Internship Opportunities">
+                      <span>Internship Opportunities</span>
+                    </label>
+                    <label class="checkbox-container">
+                      <input type="checkbox" name="contribution" value="Placement Support / Referrals">
+                      <span>Placement Support / Referrals</span>
+                    </label>
+                    <label class="checkbox-container">
+                      <input type="checkbox" name="contribution" value="Guest Lecture / Expert Session">
+                      <span>Guest Lecture / Expert Session</span>
+                    </label>
+                    <label class="checkbox-container">
+                      <input type="checkbox" name="contribution" value="Startup / Entrepreneurship Guidance">
+                      <span>Startup Guidance</span>
+                    </label>
+                    <label class="checkbox-container">
+                      <input type="checkbox" name="contribution" value="Higher Studies Guidance">
+                      <span>Higher Studies Guidance</span>
+                    </label>
+                    <label class="checkbox-container">
+                      <input type="checkbox" name="contribution" value="Alumni Chapter Volunteering">
+                      <span>Chapter Volunteering</span>
+                    </label>
+                    <label class="checkbox-container">
+                      <input type="checkbox" name="contribution" value="Event Coordination">
+                      <span>Event Coordination</span>
+                    </label>
+                    <label class="checkbox-container">
+                      <input type="checkbox" name="contribution" value="Other">
+                      <span>Other Support</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group form-checkbox-group" style="margin-bottom: 20px;">
+                <label class="checkbox-container" style="display: flex; gap: 10px; align-items: flex-start; font-weight: normal; font-size: 0.8rem; color: var(--text-sub); cursor: pointer;">
+                  <input type="checkbox" id="reg-disclaimer" required style="width: auto; margin-top: 3px; cursor: pointer;">
+                  <span>I acknowledge that this submission is a proposed expression of interest and does not grant automatic membership or voting rights. All credentials are subject to administrative verification against official college databases. *</span>
+                </label>
+                <div class="form-feedback" id="feedback-reg-disclaimer"></div>
+              </div>
+
+              <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 16px; line-height: 1.4;">
+                <i class="fa-solid fa-circle-info" style="color: var(--accent); margin-right: 4px;"></i> Submission of this form is strictly for database coordination. No financial transactions are supported or requested.
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block" id="reg-submit-btn">
+                <span id="btn-text">Submit Request</span>
+                <span class="spinner" id="btn-spinner"><i class="fa-solid fa-spinner fa-spin"></i></span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Social -->
+  <section id="contact" class="contact-section scroll-reveal">
+    <div class="container">
+      <div class="section-title-block">
+        <span class="section-tag tag-official"><i class="fa-solid fa-envelope"></i> Contact</span>
+        <h2 class="section-title">Contact &amp; Social</h2>
+        <div class="divider"></div>
+        <p class="section-desc">Reach the Alumni Cell or follow official updates.</p>
+      </div>
+      <div class="institutional-card contact-card">
+        <div class="info-item">
+          <i class="fa-solid fa-envelope gold-icon"></i>
+          <div>
+            <h3>Email</h3>
+            <p><a href="mailto:alumnicell@recabn.ac.in">alumnicell@recabn.ac.in</a></p>
+          </div>
+        </div>
+        <div class="info-item">
+          <i class="fa-solid fa-location-dot gold-icon"></i>
+          <div>
+            <h3>Campus</h3>
+            <p>Rajkiya Engineering College, Ambedkar Nagar, Akbarpur – Tanda Road, Ambedkar Nagar 224122</p>
+          </div>
+        </div>
+        <div class="contact-social-row">
+          <a href="https://www.linkedin.com/company/alumni-cell-rajkiya-engineering-college-ambedkar-nagar/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          <a href="https://recabn.ac.in" target="_blank" rel="noopener"><i class="fa-solid fa-globe"></i> College Website</a>
+          <a href="mailto:alumnicell@recabn.ac.in"><i class="fa-solid fa-envelope"></i> Email Alumni Cell</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <i class="fa-solid fa-building-columns gold-icon"></i>
+            <span>RECABN RAA</span>
+          </div>
+          <p>Alumni Network Framework for Rajkiya Engineering College, Ambedkar Nagar (Established in 2010 by the Government of Uttar Pradesh). Operating under academic coordination with the Alumni Cell.</p>
+        </div>
+        <div class="footer-links-col">
+          <h4 style="color: #fff;">Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="directory.html">Alumni Directory</a></li>
+            <li><a href="opportunities.html">Opportunities &amp; Jobs</a></li>
+            <li><a href="transparency.html">Financials &amp; Transparency</a></li>
+            <li><a href="#register">Register / Join</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4 style="color: #fff;">Institutional Links</h4>
+          <ul>
+            <li><a href="https://recabn.ac.in" target="_blank" rel="noopener">REC Ambedkar Nagar Website</a></li>
+            <li><a href="https://aktu.ac.in" target="_blank" rel="noopener">AKTU Lucknow University</a></li>
+            <li><a href="https://www.aicte-india.org" target="_blank" rel="noopener">AICTE India Portal</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact-col">
+          <h4 style="color: #fff;">Contact Information</h4>
+          <p style="margin-bottom: 8px;">Campus Address: Akbarpur – Tanda Road, Katariya Yakoobpur, Ambedkar Nagar 224122</p>
+          <p style="margin-bottom: 8px;">Email: <a href="mailto:alumnicell@recabn.ac.in" style="color: #b0c4de; text-decoration: underline;">alumnicell@recabn.ac.in</a></p>
+          <div class="social-links" style="margin-top: 12px;">
+            <a href="https://www.linkedin.com/company/alumni-cell-rajkiya-engineering-college-ambedkar-nagar/" target="_blank" rel="noopener" style="color: #b0c4de; display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem;" class="footer-social-link">
+              <i class="fa-brands fa-linkedin" style="font-size: 1.2rem; color: #0a66c2;"></i> Alumni Cell LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom" style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 24px; margin-top: 40px;">
+        <p style="text-align: center; color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;"><span>&copy; 2026 RECABN Alumni Association (RAA) Framework. All rights reserved.</span></p>
+        <div class="footer-disclaimer" style="font-size: 0.8rem; color: #8aa3bd; margin-top: 8px; text-align: center;">
+          This portal represents the official alumni engagement framework under academic coordination. No financial transactions are associated with this initiative.
+          <span style="margin: 0 8px;">|</span>
+          <a href="disclaimer.html" style="color: #b0c4de; text-decoration: underline;">Legal Notice &amp; Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification System -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Custom Logic JS -->
+  <script src="app.js?v=14"></script>
+</body>
+</html>

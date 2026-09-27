@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RECABN Alumni Association (RAA) - Institutional Alumni Network</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Proposed alumni network portal of Rajkiya Engineering College, Ambedkar Nagar. Fostering connections and supporting institutional growth.">
+  <meta name="keywords" content="RECABN, Rajkiya Engineering College Ambedkar Nagar, RAA, REC Ambedkar Nagar Alumni, AKTU Alumni, UP Government College">
+  <meta name="author" content="RECABN Alumni Network">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css?v=9">
+
+  <!-- Firebase App & Firestore Client SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+
+  <!-- Top Sticky Navbar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <div class="crest-placeholder">
+          <i class="fa-solid fa-building-columns"></i>
+        </div>
+        <div class="logo-text">
+          <span class="logo-title">RECABN RAA</span>
+          <span class="logo-subtitle">Alumni Network Framework</span>
+        </div>
+      </a>
+      
+      <nav class="nav-links" id="nav-links">
+        <a href="#hero" class="active">Home</a>
+        <a href="#about-college">About RECABN</a>
+        <a href="#about-raa">About RAA</a>
+        <a href="#benefits">Why It Matters</a>
+        <a href="#students">Students</a>
+        <a href="#chapters">Chapters</a>
+        <a href="#spotlight">Highlights</a>
+        <a href="#governance">Governance</a>
+        <a href="#documents">Links</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#register-section" class="btn btn-primary btn-sm">Connect</a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 1. Hero Section -->
+  <section id="hero" class="hero-section">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <div class="badge-official" style="background: rgba(11, 34, 64, 0.08); color: var(--primary); border: 1px solid rgba(11, 34, 64, 0.15); padding: 6px 12px; border-radius: 4px; display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 24px;">
+          <i class="fa-solid fa-file-circle-check" style="color: var(--accent); margin-right: 6px;"></i> Status: Framework Consultation
+        </div>
+        <h1 class="hero-title">Connecting Graduates.<br>Empowering Students.<br>Building Legacy.</h1>
+        <p class="hero-subtitle">
+          An organized academic and professional engagement framework connecting REC Ambedkar Nagar graduates to support student mentorship, share industrial insights, and facilitate institutional growth.
+        </p>
+        <div class="initiative-micro-block" style="background: rgba(255,255,255,0.7); border: 1px solid rgba(11,34,64,0.1); padding: 12px 16px; border-radius: var(--border-radius); display: inline-block; margin-bottom: var(--space-lg);">
+          <p style="margin: 0; font-size: 0.8rem; color: var(--text-main); display: flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-circle-info" style="color: var(--accent);"></i>
+            <strong>Current Phase:</strong> Operating in coordination with the Alumni Cell. Full registry launch pending final validation.
+          </p>
+        </div>
+        <div class="hero-buttons">
+          <a href="#register-section" class="btn btn-primary">Submit Expression of Interest</a>
+          <a href="#benefits" class="btn btn-secondary">View Framework</a>
+        </div>
+      </div>
+      <div class="hero-shield">
+        <div class="institutional-seal">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <span class="seal-text">ESTD 2010</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Trust Strip -->
+  <section class="trust-strip" style="border-bottom: 1px solid var(--border-color); background: #fff;">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-item">
+          <i class="fa-solid fa-building-user"></i>
+          <div>
+            <strong>Government Institution</strong>
+            <span>Uttar Pradesh, India</span>
+          </div>
+        </div>
+        <div class="trust-item">
+          <i class="fa-solid fa-calendar-check"></i>
+          <div>
+            <strong>Established 2010</strong>
+            <span>Decade of Academic Legacy</span>
+          </div>
+        </div>
+        <div class="trust-item">
+          <i class="fa-solid fa-circle-check"></i>
+          <div>
+            <strong>AICTE Approved</strong>
+            <span>Meeting National Standards</span>
+          </div>
+        </div>
+        <div class="trust-item">
+          <i class="fa-solid fa-award"></i>
+          <div>
+            <strong>AKTU Affiliated</strong>
+            <span>Official College Code: 737</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. About RECABN -->
+  <section id="about-college" class="about-section scroll-reveal">
+    <div class="container">
+      <div class="section-title-block">
+        <span class="section-tag tag-official"><i class="fa-solid fa-square-check"></i> Official College Info</span>
+        <h2 class="section-title">Rajkiya Engineering College, Ambedkar Nagar</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="lead-paragraph">
+            Rajkiya Engineering College, Ambedkar Nagar (RECABN) was established in 2010 by the Government of Uttar Pradesh to deliver high-quality technical education and foster research excellence.
+          </p>
+          <p>
+            The institute is approved by the All India Council for Technical Education (AICTE) and is affiliated with Dr. A.P.J. Abdul Kalam Technical University (AKTU), Lucknow (College Code 737). REC Ambedkar Nagar is dedicated to academic development, offering state-of-the-art laboratory facilities and fostering top engineering talent.
+          </p>
+          <p>
+            The college currently offers B.Tech programs in three core disciplines, with a verified intake of 60 seats per branch:
+          </p>
+          <ul class="branch-list" style="list-style: none; margin-bottom: 20px; padding-left: 5px;">
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-chevron-right text-gold" style="margin-right: 10px; color: var(--accent);"></i> Information Technology (IT)</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-chevron-right text-gold" style="margin-right: 10px; color: var(--accent);"></i> Electrical Engineering (EE)</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-chevron-right text-gold" style="margin-right: 10px; color: var(--accent);"></i> Civil Engineering (CE)</li>
+          </ul>
+        </div>
+        <div class="mission-vision-cards">
+          <div class="institutional-card">
+            <h3><i class="fa-solid fa-circle-user gold-icon"></i> Institutional Leadership</h3>
+            <p><strong>Director:</strong> Prof. Dhananjay Singh</p>
+            <p><strong>Official Contact:</strong> <a href="mailto:director@recabn.ac.in">director@recabn.ac.in</a></p>
+            <p class="card-note" style="font-size: 0.8rem; color: var(--text-muted); margin-top: 12px; border-top: 1px solid var(--border-color); padding-top: 12px;">
+              For official administrative requests, academic verifications, and formal inquiries, please contact the Director's office directly.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. About RAA -->
+  <section id="about-raa" class="about-section scroll-reveal section-gray">
+    <div class="container">
+      <div class="section-title-block">
+        <h2 class="section-title">Alumni Initiative Framework</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="lead-paragraph">
+            The RECABN Alumni Association (RAA) is an engagement framework designed to organize the graduate community of Rajkiya Engineering College, Ambedkar Nagar. With 12 graduating batches (2014–2025) now established in diverse sectors, this initiative aims to formalize batch records and communication channels.
+          </p>
+          <p>
+            The association focuses on developing advisory and career-support pathways under college guidance. By establishing a central alumni directory, the network intends to support batch-wide communication, career exchanges, and institutional advisory collaborations.
+          </p>
+          <p>
+            <strong>How can alumni contribute?</strong> The framework coordinates strictly qualitative, voluntary advisory support:
+          </p>
+          <ul class="branch-list" style="list-style: none; margin-bottom: 20px; padding-left: 5px;">
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-user-tie text-gold" style="margin-right: 10px; color: var(--accent);"></i> <strong>Mentorship & Advising:</strong> Guiding students on career paths, post-graduate study, and corporate expectations.</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-chalkboard-user text-gold" style="margin-right: 10px; color: var(--accent);"></i> <strong>Expert Lectures:</strong> Delivering seminars on technical advancements and industrial applications.</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-briefcase text-gold" style="margin-right: 10px; color: var(--accent);"></i> <strong>Career Guidance:</strong> Advising on PSU entrance preparations, research applications, and internships.</li>
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-comments text-gold" style="margin-right: 10px; color: var(--accent);"></i> <strong>Academic Feedback:</strong> Providing industry inputs to assist with curriculum alignment reviews.</li>
+          </ul>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">
+            <em>Note: The association operates under a draft constitution and bylaws, currently undergoing institutional review to align with the college's administrative guidelines.</em>
+          </p>
+        </div>
+        <div class="mission-vision-cards">
+          <div class="institutional-card">
+            <h3><i class="fa-solid fa-compass gold-icon"></i> Strategic Objective</h3>
+            <p>To establish a formal, verified database of graduates, build communication channels between batchmates, and coordinate collaborative initiatives that benefit students and the college.</p>
+          </div>
+          <div class="institutional-card">
+            <h3><i class="fa-solid fa-eye gold-icon"></i> Core Vision</h3>
+            <p>To foster a lifelong connection among graduates, promoting mutual growth and contributing to the academic excellence of REC Ambedkar Nagar.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proposed Milestones Timeline -->
+      <div class="milestones-block" style="margin-top: 48px; border-top: 1px solid var(--border-color); padding-top: 40px; scroll-margin-top: 85px;">
+        <h3 style="font-family: var(--font-heading); font-size: var(--font-size-h3); color: var(--primary); margin-bottom: 12px; display: flex; align-items: center; gap: 12px;">
+          <i class="fa-solid fa-route gold-icon" style="color: var(--accent);"></i> Development Milestones
+        </h3>
+        <p style="color: var(--text-sub); margin-bottom: 8px; max-width: 800px;">
+          The roadmap for establishing the RECABN Alumni Association follows a phased approach to ensure strict alignment with college administrative policies and sustainable long-term governance.
+        </p>
+        
+        <div class="milestones-timeline">
+          <div class="milestone-step">
+            <div class="step-number">01</div>
+            <h4>Interest Collection</h4>
+            <p>Gathering expressions of interest from B.Tech graduates to establish the foundation database.</p>
+          </div>
+          <div class="milestone-step">
+            <div class="step-number">02</div>
+            <h4>Coordination Team</h4>
+            <p>Assembling a preliminary coordination team representing diverse graduating batches.</p>
+          </div>
+          <div class="milestone-step">
+            <div class="step-number">03</div>
+            <h4>Charter Submission</h4>
+            <p>Drafting and submitting the formal constitution and bylaws for Director-level review.</p>
+          </div>
+          <div class="milestone-step">
+            <div class="step-number">04</div>
+            <h4>Official Launch</h4>
+            <p>Executing institutional integration and formally launching the verified registry platform.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Proposed Chapters Block -->
+      <div id="chapters" class="chapters-block" style="margin-top: 40px; border-top: 1px solid var(--border-color); padding-top: 40px; scroll-margin-top: 85px;">
+        <h3 style="font-family: var(--font-heading); font-size: var(--font-size-h3); color: var(--primary); margin-bottom: 12px; display: flex; align-items: center; gap: 12px;">
+          <i class="fa-solid fa-map-location-dot gold-icon" style="color: var(--accent);"></i> Regional Network Hubs
+        </h3>
+        <p style="color: var(--text-sub); margin-bottom: 24px; max-width: 800px;">
+          To support peer networking and regional student support, the framework structures local nodes in key metropolitan hubs. These chapters will coordinate local meetups and industry-academic interactions in alignment with college guidance:
+        </p>
+        <div class="chapters-grid">
+          <div class="chapter-card institutional-card">
+            <h4><i class="fa-solid fa-tree-city" style="color: var(--accent); margin-right: 8px;"></i> Noida / NCR Hub</h4>
+            <p style="font-size: 0.85rem; margin-bottom: 0;">Primary coordination node for corporate networking, startup mentoring, and IT sector linkages across Noida, Gurgaon, and Greater Noida.</p>
+          </div>
+          <div class="chapter-card institutional-card">
+            <h4><i class="fa-solid fa-landmark" style="color: var(--accent); margin-right: 8px;"></i> Lucknow & Home Node</h4>
+            <p style="font-size: 0.85rem; margin-bottom: 0;">Centering academic liaison, institutional collaborations, university affairs with AKTU, and campus activities at Ambedkar Nagar.</p>
+          </div>
+          <div class="chapter-card institutional-card">
+            <h4><i class="fa-solid fa-code" style="color: var(--accent); margin-right: 8px;"></i> Bengaluru Tech Chapter</h4>
+            <p style="font-size: 0.85rem; margin-bottom: 0;">Connecting software developers, tech entrepreneurs, and R&D specialists to support student developer bootcamps and tech internships.</p>
+          </div>
+          <div class="chapter-card institutional-card">
+            <h4><i class="fa-solid fa-city" style="color: var(--accent); margin-right: 8px;"></i> Delhi & Metro Hubs</h4>
+            <p style="font-size: 0.85rem; margin-bottom: 0;">Focusing on civil services aspirants, public sector undertakings (PSUs), government engineering nodes, and competitive exam guidance.</p>
+          </div>
+          <div class="chapter-card institutional-card">
+            <h4><i class="fa-solid fa-globe" style="color: var(--accent); margin-right: 8px;"></i> West-South & Overseas</h4>
+            <p style="font-size: 0.85rem; margin-bottom: 0;">Reaching out to regional cells in Mumbai, Pune, and Hyderabad, alongside a central Overseas cell for global research and academic links.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Why Alumni Network Matters -->
+  <section id="benefits" class="benefits-section scroll-reveal">
+    <div class="container">
+      <div class="section-title-block">
+        <span class="section-tag tag-official"><i class="fa-solid fa-lightbulb"></i> Strategic Value</span>
+        <h2 class="section-title">Significance of the Network</h2>
+        <div class="divider"></div>
+        <p class="section-desc" style="font-size: 1.1rem; color: var(--primary); font-weight: 500;">A structured alumni network accelerates student placement, strengthens institutional advisory, and builds a lifelong professional community.</p>
+        <p class="section-desc">Establishing this framework offers mutual benefits for graduates, students, and the college. All collaboration is strictly qualitative and non-monetary.</p>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fa-solid fa-network-wired"></i></div>
+          <h3>Graduate Networking</h3>
+          <p>Provides peer-to-peer professional networking for RECABN graduates across batches, supporting career transitions and industry collaboration.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <h3>Student Guidance</h3>
+          <p>Enables experienced alumni to deliver voluntary advisory support, sharing career prep insights with B.Tech students.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fa-solid fa-circle-nodes"></i></div>
+          <h3>Institutional Advisory</h3>
+          <p>Shares industry feedback and technological trends to assist the college in aligning B.Tech program preparations with current trends.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fa-solid fa-id-card"></i></div>
+          <h3>Verified Records</h3>
+          <p>Maintains a secure, verified registration database to keep official batch-wide communication records and academic links intact.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Students & Mentorship -->
+  <section id="students" class="students-section scroll-reveal section-gray">
+    <div class="container">
+      <div class="students-grid">
+        <div class="students-intro">
+          <span class="section-tag tag-official"><i class="fa-solid fa-graduation-cap"></i> Student Support</span>
+          <h2 class="section-title">Mentorship & Career Support</h2>
+          <div class="divider left"></div>
+          <p class="lead-paragraph">
+            The core focus of the RAA network is supporting the academic and career development of current B.Tech students.
+          </p>
+          <p>
+            Through structured mentorship channels, verified alumni will provide guidance on industry expectations, internship search, and resume reviews. This helps students navigate their transition into professional careers and provides them with direct access to experienced mentors.
+          </p>
+        </div>
+        <div class="mentorship-cards">
+          <div class="institutional-card">
+            <h4><i class="fa-solid fa-circle-question gold-icon"></i> Placement & Resume Guidance</h4>
+            <p>Proposed sessions where alumni review resumes and provide feedback on technical expectations in different engineering domains.</p>
+          </div>
+          <div class="institutional-card">
+            <h4><i class="fa-solid fa-laptop-code gold-icon"></i> Internship Advisory</h4>
+            <p>Providing guidance on identifying and preparing for internship opportunities in industry, PSUs, and research environments.</p>
+          </div>
+          <div class="institutional-card">
+            <h4><i class="fa-solid fa-diagram-project gold-icon"></i> Industry Trends Lectures</h4>
+            <p>Proposed guest lectures and webinars to keep students informed about developments in Information Technology, Electrical, and Civil engineering.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Alumni Highlights -->
+  <section id="spotlight" class="spotlight-section scroll-reveal">
+    <div class="container">
+      <div class="section-title-block">
+        <h2 class="section-title">Alumni Excellence Highlights</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="highlights-placeholder institutional-card" style="text-align: center; padding: 56px 24px; background: linear-gradient(to bottom, #ffffff, var(--bg-gray)); border: 1px solid rgba(179, 143, 68, 0.2);">
+        <i class="fa-solid fa-award placeholder-icon text-gold" style="font-size: 3.5rem; margin-bottom: 24px; color: var(--accent);"></i>
+        <h3 style="margin-bottom: 16px; font-family: var(--font-heading); font-size: 1.8rem; color: var(--primary);">Showcasing Excellence</h3>
+        <p class="lead-paragraph" style="max-width: 700px; margin: 0 auto 20px; font-size: 1.1rem; color: var(--text-main);">
+          A future gallery dedicated to verified alumni leadership, public service, entrepreneurship, and innovation.
+        </p>
+        <p class="section-desc" style="max-width: 800px; margin: 0 auto;">
+          To maintain the highest institutional standards, achievements and profile listings will be published selectively upon formal verification by the college administration following the official launch.
+        </p>
+      </div>
+
+      <!-- Proposed Events Block -->
+      <div class="events-block" style="margin-top: 40px; border-top: 1px solid var(--border-color); padding-top: 40px;">
+        <h3 style="font-family: var(--font-heading); font-size: var(--font-size-h3); color: var(--primary); margin-bottom: 12px; display: flex; align-items: center; gap: 12px;">
+          <i class="fa-solid fa-calendar-days gold-icon" style="color: var(--accent);"></i> Proposed Alumni Engagement Calendar
+        </h3>
+        <p style="color: var(--text-sub); margin-bottom: 24px; max-width: 800px;">
+          The RAA framework coordinates recurring academic, career, and regional engagements to sustain connection with the institution. Planned programs include:
+        </p>
+        <div class="events-grid">
+          <div class="event-card institutional-card">
+            <span class="event-tag-badge">Flagship Event</span>
+            <h4>Annual Alumni Meet</h4>
+            <p style="font-size: 0.85rem; margin-bottom: 0; color: var(--text-sub);">An annual on-campus gathering to facilitate interaction between graduated batches, student groups, and college administration.</p>
+          </div>
+          <div class="event-card institutional-card">
+            <span class="event-tag-badge">Academic Link</span>
+            <h4>RAA Lecture Series</h4>
+            <p style="font-size: 0.85rem; margin-bottom: 0; color: var(--text-sub);">Monthly guest seminars delivering industrial insights, engineering developments, and technical feedback for B.Tech branches.</p>
+          </div>
+          <div class="event-card institutional-card">
+            <span class="event-tag-badge">Student Support</span>
+            <h4>Mentorship Bootcamps</h4>
+            <p style="font-size: 0.85rem; margin-bottom: 0; color: var(--text-sub);">Pre-placement sessions focusing on resume building, industrial expectations, mock interviews, and career transitions.</p>
+          </div>
+          <div class="event-card institutional-card">
+            <span class="event-tag-badge">Career Advisory</span>
+            <h4>Sector & Branch Webinars</h4>
+            <p style="font-size: 0.85rem; margin-bottom: 0; color: var(--text-sub);">Topic-specific virtual meets highlighting PSU exams, core engineering opportunities, and global study options.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Governance Framework -->
+  <section id="governance" class="governance-section scroll-reveal section-gray">
+    <div class="container">
+      <div class="section-title-block">
+        <span class="section-tag tag-official"><i class="fa-solid fa-sitemap"></i> Structural Framework</span>
+        <h2 class="section-title">Governance Framework</h2>
+        <div class="divider"></div>
+        <p class="section-desc">The organizational structure for RAA focuses on strict administrative alignment and compliance with college guidelines. The framework below represents the operational model subject to official college review.</p>
+      </div>
+
+      <div class="governance-grid">
+        <!-- Patron -->
+        <div class="gov-card institutional-card card-patron">
+          <div class="gov-icon-box"><i class="fa-solid fa-building-columns"></i></div>
+          <h3>Director, REC Ambedkar Nagar</h3>
+          <span class="gov-role">Institutional Patron</span>
+          <p>Serves as the institutional patron, ensuring alignment with official college guidelines and administrative policies, subject to formal institutional authorization.</p>
+        </div>
+
+        <div class="gov-officers-grid">
+          <!-- General Body -->
+          <div class="gov-card institutional-card">
+            <h3>Alumni General Body</h3>
+            <span class="gov-role">Membership Framework</span>
+            <p>Representing registered B.Tech graduates of REC Ambedkar Nagar who submit their expression of interest, subject to college registry verification.</p>
+          </div>
+          <!-- Executive Committee -->
+          <div class="gov-card institutional-card">
+            <h3>Executive Coordination Committee</h3>
+            <span class="gov-role">Coordinator Structure</span>
+            <p>Formed by nominated batch coordinators to assist in communication, network activities, and event planning, subject to charter approval.</p>
+          </div>
+          <!-- Advisory Board -->
+          <div class="gov-card institutional-card">
+            <h3>Advisory Committee</h3>
+            <span class="gov-role">Academic Alignment</span>
+            <p>An advisory group including college faculty and senior alumni to ensure activities support the academic environment and follow institutional directives.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Useful Links & Documents -->
+  <section id="documents" class="documents-section scroll-reveal">
+    <div class="container">
+      <div class="section-title-block">
+        <span class="section-tag tag-official"><i class="fa-solid fa-square-check"></i> References & Resources</span>
+        <h2 class="section-title">Institutional Documents & Official Links</h2>
+        <div class="divider"></div>
+        <p class="section-desc">Access official college web resources and view the review status of proposed association documents.</p>
+      </div>
+
+      <div class="docs-grid">
+        <div class="doc-item institutional-card">
+          <div class="doc-icon"><i class="fa-solid fa-globe"></i></div>
+          <div class="doc-info">
+            <span class="badge-tag tag-official"><i class="fa-solid fa-square-check"></i> Official External Link</span>
+            <h3>Official RECABN College Website</h3>
+            <p>The primary web portal for all official announcements, academic calendars, and institutional directories.</p>
+            <span class="doc-meta">Domain: recabn.ac.in</span>
+          </div>
+          <a href="https://recabn.ac.in" target="_blank" rel="noopener" class="btn btn-secondary btn-sm"><i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Site</a>
+        </div>
+
+        <div class="doc-item institutional-card">
+          <div class="doc-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="doc-info">
+            <span class="badge-tag tag-official"><i class="fa-solid fa-square-check"></i> Official External Link</span>
+            <h3>Official College Alumni Registration</h3>
+            <p>Access the formal alumni registration utility directly managed on the college web infrastructure.</p>
+            <span class="doc-meta">Domain: recabn.ac.in</span>
+          </div>
+          <a href="https://www.recabn.ac.in/pages/Alumni" target="_blank" rel="noopener" class="btn btn-secondary btn-sm"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Page</a>
+        </div>
+
+        <div class="doc-item doc-item-full institutional-card">
+          <div class="doc-info-full">
+            <span class="badge-tag tag-draft"><i class="fa-solid fa-clock"></i> Draft Framework / Under Review</span>
+            <h3><i class="fa-solid fa-file-shield gold-icon"></i> Draft Constitution & Bylaws</h3>
+            <p>The official draft constitution and bylaws of the proposed alumni association are currently undergoing internal administrative review. Once approved by the college administration, they will be published here.</p>
+            <span class="doc-meta">Status: Pending Administrative Review</span>
+          </div>
+          <button class="btn btn-secondary btn-sm" disabled><i class="fa-solid fa-ban"></i> To be updated</button>
+        </div>
+
+        <!-- Verification Status Tracker Card -->
+        <div class="doc-item doc-item-full institutional-card tracker-prototype-wrapper" style="margin-top: var(--space-lg);">
+          <div class="status-tracker-icon" style="opacity: 0.5;">
+            <i class="fa-solid fa-user-check" style="font-size: 2.2rem; color: var(--accent);"></i>
+          </div>
+          <div class="status-tracker-info" style="flex-grow: 1; margin-left: 20px; position: relative;">
+            
+            <h3 style="margin-top: 0; font-family: var(--font-heading); font-size: 1.25rem;">Application Status Tracker</h3>
+            <p style="font-size: 0.9rem; color: var(--text-sub); margin-bottom: var(--space-sm);">
+              Once the RAA charter receives institutional approval and Application IDs are formally issued, registered alumni will be able to track the status of their registry entry here using their Application ID and registered email address.
+            </p>
+            
+            <form id="status-tracker-form" class="status-inline-form" style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: var(--space-sm); opacity: 0.4; pointer-events: none;">
+              <div class="form-input-wrapper" style="flex: 1; min-width: 220px;">
+                <input type="text" id="status-app-id" placeholder="Application ID (e.g. RAA-26-1049)" 
+                       style="width: 100%; height: 44px; padding: 10px 14px; border: 1px solid var(--border-color); border-radius: var(--border-radius); font-size: 0.85rem; font-family: var(--font-body); background-color: var(--bg-gray);" disabled>
+              </div>
+              <div class="form-input-wrapper" style="flex: 1; min-width: 220px;">
+                <input type="email" id="status-email" placeholder="Registered Email Address" 
+                       style="width: 100%; height: 44px; padding: 10px 14px; border: 1px solid var(--border-color); border-radius: var(--border-radius); font-size: 0.85rem; font-family: var(--font-body); background-color: var(--bg-gray);" disabled>
+              </div>
+              <button type="button" class="btn btn-primary" style="height: 44px; padding: 0 24px; font-size: 0.85rem;" disabled>
+                <span>Check Status</span>
+              </button>
+            </form>
+            
+            <div class="tracker-preview-overlay">
+              <span style="background: var(--primary); color: white; padding: 8px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; box-shadow: var(--shadow-sm);"><i class="fa-solid fa-lock" style="margin-right: 6px;"></i> Module Unlocks Post-Launch</span>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Registration Form / Connect -->
+  <section id="register-section" class="registration-section scroll-reveal">
+    <div class="container">
+      <div class="reg-container-grid">
+        <div class="reg-intro-text">
+          <span class="section-tag tag-draft text-gold"><i class="fa-solid fa-file-signature"></i> Verified Alumni Registry</span>
+          <h2 class="section-title text-white">Join the Alumni Registry</h2>
+          <div class="divider left gold-divider"></div>
+          <p class="text-light">
+            If you are a graduate of REC Ambedkar Nagar, submit your credentials here. This helps build a secure database to coordinate future initiatives. All submissions are subject to verification against official college records.
+          </p>
+          <div class="requirements-box">
+            <h4>Verification Prerequisites:</h4>
+            <ul>
+              <li><i class="fa-solid fa-square-check"></i> Completion of B.Tech program from REC Ambedkar Nagar.</li>
+              <li><i class="fa-solid fa-square-check"></i> Verification of Roll Number / Enrollment credentials.</li>
+              <li><i class="fa-solid fa-square-check"></i> Compliance with the institution's conduct policy.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="reg-form-panel">
+          <div class="institutional-card">
+            <h3>Expression of Interest</h3>
+            <p class="form-desc">Please provide your academic and professional credentials to register your interest in the proposed network. All entries are verified against college records.</p>
+            
+            <!-- Inline success/error message banner -->
+            <div id="form-message-banner" class="form-message-banner" style="display: none; margin-bottom: 20px; padding: 12px; border-radius: var(--border-radius); font-size: 0.85rem; line-height: 1.5;"></div>
+
+            <form id="registration-form" novalidate>
+              <div class="form-group">
+                <label for="reg-name">Full Name *</label>
+                <input type="text" id="reg-name" required placeholder="Enter full name (as per college records)">
+                <div class="form-feedback" id="feedback-reg-name"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="reg-email">Email Address *</label>
+                <input type="email" id="reg-email" required placeholder="e.g., name@domain.com">
+                <div class="form-feedback" id="feedback-reg-email"></div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="reg-batch">Graduation Year *</label>
+                  <select id="reg-batch" required>
+                    <option value="">Select Graduation Year</option>
+                    <option value="2014">2014 (First Graduating Batch)</option>
+                    <option value="2015">2015</option>
+                    <option value="2016">2016</option>
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                  </select>
+                  <div class="form-feedback" id="feedback-reg-batch"></div>
+                </div>
+
+                <div class="form-group">
+                  <label for="reg-branch">Engineering Branch *</label>
+                  <select id="reg-branch" required>
+                    <option value="">Select Branch</option>
+                    <option value="Information Technology">Information Technology</option>
+                    <option value="Electrical Engineering">Electrical Engineering</option>
+                    <option value="Civil Engineering">Civil Engineering</option>
+                  </select>
+                  <div class="form-feedback" id="feedback-reg-branch"></div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="reg-company">Organization (Optional)</label>
+                  <input type="text" id="reg-company" placeholder="e.g. Corporate, Civil Services, PSU">
+                </div>
+                <div class="form-group">
+                  <label for="reg-designation">Designation (Optional)</label>
+                  <input type="text" id="reg-designation" placeholder="e.g. Engineer, Officer, Manager">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="reg-city">Current City *</label>
+                  <input type="text" id="reg-city" required placeholder="Current city of residence">
+                  <div class="form-feedback" id="feedback-reg-city"></div>
+                </div>
+                <div class="form-group">
+                  <label for="reg-linkedin">LinkedIn Profile URL (Optional)</label>
+                  <input type="url" id="reg-linkedin" placeholder="https://linkedin.com/in/username">
+                  <div class="form-feedback" id="feedback-reg-linkedin"></div>
+                </div>
+              </div>
+
+              <div class="form-group form-checkbox-group" style="margin-bottom: 20px;">
+                <label class="checkbox-container" style="display: flex; gap: 10px; align-items: flex-start; font-weight: normal; font-size: 0.8rem; color: var(--text-sub); cursor: pointer;">
+                  <input type="checkbox" id="reg-disclaimer" required style="width: auto; margin-top: 3px; cursor: pointer;">
+                  <span>I acknowledge that this submission is a proposed expression of interest and does not grant automatic membership or voting rights. All credentials are subject to administrative verification against official college databases. *</span>
+                </label>
+                <div class="form-feedback" id="feedback-reg-disclaimer"></div>
+              </div>
+
+              <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 16px; line-height: 1.4;">
+                <i class="fa-solid fa-circle-info" style="color: var(--accent); margin-right: 4px;"></i> Submission of this form is strictly for database coordination. No financial transactions are supported or requested.
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block" id="reg-submit-btn">
+                <span id="btn-text">Submit Request</span>
+                <span class="spinner" id="btn-spinner"><i class="fa-solid fa-spinner fa-spin"></i></span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section scroll-reveal">
+    <div class="container">
+      <div class="section-title-block">
+        <span class="section-tag tag-official"><i class="fa-solid fa-square-check"></i> Official Communications</span>
+        <h2 class="section-title">Institutional Contact Details</h2>
+        <div class="divider"></div>
+        <p class="section-desc">For official queries regarding the proposed alumni network framework or college administrative matters, please use the contacts below.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card institutional-card">
+          <div class="info-item">
+            <i class="fa-solid fa-location-dot gold-icon"></i>
+            <div>
+              <h3>College Campus Address</h3>
+              <p>Rajkiya Engineering College, Ambedkar Nagar<br>Akbarpur – Tanda Road, In Front of Hawai Patti, Katariya Yakoobpur, Ambedkar Nagar 224122</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-envelope gold-icon"></i>
+            <div>
+              <h3>Official Director Email</h3>
+              <p><a href="mailto:director@recabn.ac.in" style="color: var(--primary); font-weight: 600; text-decoration: underline;">director@recabn.ac.in</a></p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-circle-info"></i>
+            <div>
+              <h3>College Registrar & Administration</h3>
+              <p>Please refer to the official college web portal at <a href="https://recabn.ac.in" target="_blank" rel="noopener" style="color: var(--primary); font-weight: 600; text-decoration: underline;">recabn.ac.in</a> for direct contacts, department hotlines, and registrar offices.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-card institutional-card">
+          <h3>Send an Inquiry / Message</h3>
+          <p class="form-desc" style="margin-bottom: 16px;">Use this form to submit inquiries or suggestions regarding the proposed RAA engagement framework.</p>
+          
+          <div class="notice-box-warning" style="margin-bottom: 20px; padding: 12px 16px; border: 1px solid #d39e00; background-color: #fff9e6; border-radius: var(--border-radius); color: #856404; font-size: 0.8rem; line-height: 1.5;">
+            <i class="fa-solid fa-triangle-exclamation" style="margin-right: 6px; color: #d39e00;"></i>
+            <strong>College Queries Notice:</strong> This form does NOT handle transcripts, admissions, fees, or administrative requests. Please contact the college administration directly via the official portal.
+          </div>
+
+          <!-- Inline success/error message banner -->
+          <div id="contact-message-banner" class="form-message-banner" style="display: none; margin-bottom: 20px; padding: 12px; border-radius: var(--border-radius); font-size: 0.85rem; line-height: 1.5;"></div>
+
+          <form id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="contact-name">Name *</label>
+              <input type="text" id="contact-name" required placeholder="Enter your name">
+              <div class="form-feedback" id="feedback-contact-name"></div>
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Email Address *</label>
+              <input type="email" id="contact-email" required placeholder="Enter your email">
+              <div class="form-feedback" id="feedback-contact-email"></div>
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Inquiry Details *</label>
+              <textarea id="contact-message" required rows="4" placeholder="Describe your inquiry or alumni networking suggestions..."></textarea>
+              <div class="form-feedback" id="feedback-contact-message"></div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" id="contact-submit-btn">
+              <span id="contact-btn-text">Submit Message</span>
+              <span class="spinner" id="contact-btn-spinner"><i class="fa-solid fa-spinner fa-spin"></i></span>
+            </button>
+            <p style="font-size: 0.73rem; color: var(--text-muted); margin-top: 10px; display: flex; align-items: center; gap: 5px;">
+              <i class="fa-solid fa-circle-check" style="color: #28a745;"></i>
+              Messages submitted through this form are reviewed as part of the consultation and coordination process.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <i class="fa-solid fa-building-columns gold-icon"></i>
+            <span>RECABN RAA</span>
+          </div>
+          <p>Alumni Network Framework for Rajkiya Engineering College, Ambedkar Nagar (Established in 2010 by the Government of Uttar Pradesh). Operating under academic coordination with the Alumni Cell.</p>
+        </div>
+        <div class="footer-links-col">
+          <h3>Navigation</h3>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about-college">About RECABN</a></li>
+            <li><a href="#about-raa">About RAA</a></li>
+            <li><a href="#chapters">Chapters</a></li>
+            <li><a href="#benefits">Why It Matters</a></li>
+            <li><a href="#students">Student Support</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h3>Institutional Links</h3>
+          <ul>
+            <li><a href="https://recabn.ac.in" target="_blank" rel="noopener">REC Ambedkar Nagar Website</a></li>
+            <li><a href="https://aktu.ac.in" target="_blank" rel="noopener">AKTU Lucknow University</a></li>
+            <li><a href="https://www.aicte-india.org" target="_blank" rel="noopener">AICTE India Portal</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact-col">
+          <h3>RAA Contact Information</h3>
+          <p>Campus Address: Akbarpur – Tanda Road, In Front of Hawai Patti, Katariya Yakoobpur, Ambedkar Nagar 224122</p>
+          <p>Official Email: <a href="mailto:director@recabn.ac.in" style="color: #b0c4de; text-decoration: underline;">director@recabn.ac.in</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom" style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 24px; margin-top: 40px;">
+        <p>&copy; 2026 RECABN Alumni Association (RAA) Framework. All rights reserved.</p>
+        <div class="footer-disclaimer" style="font-size: 0.8rem; color: #8aa3bd; margin-top: 8px;">
+          This portal represents the official alumni engagement framework under academic coordination. No financial transactions are associated with this initiative.
+          <span style="margin: 0 8px;">|</span>
+          <a href="disclaimer.html" style="color: #b0c4de; text-decoration: underline;">Legal Notice &amp; Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification System -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Custom Logic JS -->
+  <script src="app.js?v=9"></script>
+</body>
+</html>

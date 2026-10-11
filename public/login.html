@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Access | RECABN Alumni Association</title>
+    <link rel="stylesheet" href="style.css?v=15">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+</head>
+<body>
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="college-logo.png" alt="REC ABN Logo" style="height: 38px; width: auto; vertical-align: middle;">
+                <div class="logo-text">
+                    <span class="logo-title">RECABN RAA</span>
+                    <span class="logo-subtitle">Portal Access</span>
+                </div>
+            </a>
+            <nav class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="events.html">Alumni Events</a>
+                <a href="directory.html">Alumni Directory</a>
+                <a href="opportunities.html">Jobs &amp; Internships</a>
+                <a href="transparency.html">Financial Contribution</a>
+                <a href="welfare.html">Welfare &amp; Assistance</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="register.html" class="btn-secondary">Register/Join</a>
+                <a href="login.html" class="btn-primary">SignUp/Login</a>
+                <button class="mobile-toggle" id="mobile-toggle" type="button" aria-label="Toggle navigation" aria-controls="nav-links" aria-expanded="false">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="simple-content-page">
+        <section class="simple-content-card">
+            <h2>Portal Access</h2>
+            <p>Login to access the verified alumni directory and internal opportunities.</p>
+            <form method="post">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input id="login-email" name="email" type="email" autocomplete="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input id="login-password" name="password" type="password" autocomplete="current-password" required>
+                </div>
+                <button class="btn btn-primary" type="submit">Login</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fa-solid fa-building-columns gold-icon"></i>
+                        <span>RECABN RAA</span>
+                    </div>
+                    <p>Alumni Network Framework for Rajkiya Engineering College, Ambedkar Nagar.</p>
+                    <h4 style="color: #fff; margin-top: 16px;">Connect With Us</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="WhatsApp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" aria-label="Telegram" title="Telegram"><i class="fa-brands fa-telegram"></i></a>
+                        <a href="#" aria-label="Instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" aria-label="Email" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="#" aria-label="College Web" title="College Web"><i class="fa-solid fa-globe"></i></a>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a href="#"><i class="fab fa-telegram"></i> Telegram</a>
+                        <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                    </div>
+                </div>
+                <div class="footer-links-col">
+                    <h4 style="color: #fff;">Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="events.html">Alumni Events</a></li>
+                        <li><a href="directory.html">Alumni Directory</a></li>
+                        <li><a href="opportunities.html">Jobs &amp; Internships</a></li>
+                        <li><a href="transparency.html">Financial Contribution</a></li>
+                        <li><a href="welfare.html">Welfare &amp; Assistance</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js?v=14"></script>
+</body>
+</html>

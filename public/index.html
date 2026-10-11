@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=14">
+  <link rel="stylesheet" href="style.css?v=15">
 
   <!-- Firebase App & Firestore Client SDKs -->
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
@@ -30,9 +30,7 @@
   <header class="navbar" id="navbar">
     <div class="nav-container">
       <a href="index.html" class="logo">
-        <div class="crest-placeholder">
-          <i class="fa-solid fa-building-columns"></i>
-        </div>
+        <img src="college-logo.png" alt="REC ABN Logo" style="height: 38px; width: auto; vertical-align: middle;">
         <div class="logo-text">
           <span class="logo-title">RECABN RAA</span>
           <span class="logo-subtitle">Alumni Network Framework</span>
@@ -41,14 +39,17 @@
       
       <nav class="nav-links" id="nav-links">
         <a href="index.html" class="active">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="events.html">Alumni Events</a>
         <a href="directory.html">Alumni Directory</a>
-        <a href="opportunities.html">Opportunities &amp; Jobs</a>
-        <a href="transparency.html">Financials &amp; Transparency</a>
-        <a href="#register">Register / Join</a>
+        <a href="opportunities.html">Jobs &amp; Internships</a>
+        <a href="transparency.html">Financial Contribution</a>
+        <a href="welfare.html">Welfare &amp; Assistance</a>
       </nav>
 
       <div class="nav-actions">
-        <a href="#register" class="btn btn-primary btn-sm">Register / Join</a>
+        <a href="register.html" class="btn-secondary">Register/Join</a>
+        <a href="login.html" class="btn-primary">SignUp/Login</a>
         <button class="mobile-toggle" id="mobile-toggle" type="button" aria-label="Toggle navigation" aria-controls="nav-links" aria-expanded="false">
           <i class="fa-solid fa-bars"></i>
         </button>
@@ -65,13 +66,13 @@
           The RECABN Alumni Association connects graduates, mentors current students, and strengthens the professional community of Rajkiya Engineering College, Ambedkar Nagar.
         </p>
         <div class="hero-buttons">
-          <a href="#register" class="btn btn-primary">Register / Join</a>
+          <a href="register.html" class="btn btn-primary">Register / Join</a>
           <a href="directory.html" class="btn btn-secondary">Alumni Directory</a>
         </div>
       </div>
       <div class="hero-shield">
         <div class="institutional-seal">
-          <i class="fa-solid fa-graduation-cap"></i>
+          <img src="alumni-cell-logo.png" alt="Alumni Cell Logo" style="max-width: 80%; height: auto;">
           <span class="seal-text">ESTD 2010</span>
         </div>
       </div>
@@ -168,258 +169,6 @@
   </div>
 </section>
 
-  <!-- 10. Registration Form / Connect -->
-  <section id="register" class="registration-section scroll-reveal">
-    <div class="container">
-      <div class="reg-container-grid">
-        <div class="reg-intro-text">
-          <span class="section-tag tag-draft text-gold"><i class="fa-solid fa-file-signature"></i> Verified Alumni Registry</span>
-          <h2 class="section-title text-white">Join the Alumni Registry</h2>
-          <div class="divider left gold-divider"></div>
-          <p class="text-light">
-            If you are a graduate of REC Ambedkar Nagar, submit your credentials here. This helps build a secure database to coordinate future initiatives. All submissions are subject to verification against official college records.
-          </p>
-          <div class="requirements-box">
-            <h4>Verification Prerequisites:</h4>
-            <ul>
-              <li><i class="fa-solid fa-square-check"></i> Completion of B.Tech program from REC Ambedkar Nagar.</li>
-              <li><i class="fa-solid fa-square-check"></i> Verification of Roll Number / Enrollment credentials.</li>
-              <li><i class="fa-solid fa-square-check"></i> Compliance with the institution's conduct policy.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="reg-form-panel">
-          <div class="institutional-card">
-            <h3>Expression of Interest</h3>
-            <p class="form-desc">Please provide your academic and professional credentials to register your interest in the proposed network. All entries are verified against college records.</p>
-            
-            <!-- Inline success/error message banner -->
-            <div id="form-message-banner" class="form-message-banner" style="display: none; margin-bottom: 20px; padding: 12px; border-radius: var(--border-radius); font-size: 0.85rem; line-height: 1.5;"></div>
-
-            <form id="registration-form" novalidate>
-              <!-- Section 1: Basic & Contact Details -->
-              <div class="form-section">
-                <h4 class="form-section-title"><i class="fa-solid fa-user"></i> Basic & Contact Details</h4>
-                
-                <div class="form-group">
-                  <label for="reg-name">Full Name *</label>
-                  <input type="text" id="reg-name" required placeholder="Enter full name (as per college records)">
-                  <div class="form-feedback" id="feedback-reg-name"></div>
-                </div>
-
-                <div class="form-row">
-                  <div class="form-group">
-                    <label for="reg-email">Personal Email Address *</label>
-                    <input type="email" id="reg-email" required placeholder="e.g., name@domain.com">
-                    <div class="form-feedback" id="feedback-reg-email"></div>
-                  </div>
-                  
-                  <div class="form-group">
-                    <label for="reg-mobile">Mobile Number *</label>
-                    <input type="tel" id="reg-mobile" required placeholder="10-digit mobile number">
-                    <div class="form-feedback" id="feedback-reg-mobile"></div>
-                  </div>
-                </div>
-
-                <div class="form-group form-checkbox-group" style="margin-top: 10px;">
-                  <label class="checkbox-container" style="display: flex; gap: 10px; align-items: center; font-weight: normal; font-size: 0.8rem; color: var(--text-sub); cursor: pointer;">
-                    <input type="checkbox" id="reg-whats-opt-in" checked style="width: auto; margin-top: 0; cursor: pointer;">
-                    <span>Opt-in to be added to the official WhatsApp & Telegram Alumni Groups</span>
-                  </label>
-                  <span style="font-size: 0.72rem; color: var(--text-muted); margin-left: 26px; display: block; margin-top: 2px;"><i class="fa-solid fa-shield-halved" style="color: var(--accent); margin-right: 4px;"></i> Note: To prevent spam, invite links are shared privately after database verification.</span>
-                </div>
-              </div>
-
-              <!-- Section 2: Academic Details -->
-              <div class="form-section">
-                <h4 class="form-section-title"><i class="fa-solid fa-graduation-cap"></i> Academic Details</h4>
-                
-                <div class="form-row">
-                  <div class="form-group">
-                    <label for="reg-roll">University Roll Number *</label>
-                    <input type="text" id="reg-roll" required placeholder="Enter Roll Number (for verification)">
-                    <div class="form-feedback" id="feedback-reg-roll"></div>
-                  </div>
-                  
-                  <div class="form-group">
-                    <label for="reg-branch">Engineering Branch *</label>
-                    <select id="reg-branch" required>
-                      <option value="">Select Branch</option>
-                      <option value="Information Technology">Information Technology</option>
-                      <option value="Electrical Engineering">Electrical Engineering</option>
-                      <option value="Civil Engineering">Civil Engineering</option>
-                    </select>
-                    <div class="form-feedback" id="feedback-reg-branch"></div>
-                  </div>
-                </div>
-
-                <div class="form-row">
-                  <div class="form-group">
-                    <label for="reg-batch">Graduation Year *</label>
-                    <select id="reg-batch" required>
-                      <option value="">Select Graduation Year</option>
-                      <option value="2014">2014 (First Graduating Batch)</option>
-                      <option value="2015">2015</option>
-                      <option value="2016">2016</option>
-                      <option value="2017">2017</option>
-                      <option value="2018">2018</option>
-                      <option value="2019">2019</option>
-                      <option value="2020">2020</option>
-                      <option value="2021">2021</option>
-                      <option value="2022">2022</option>
-                      <option value="2023">2023</option>
-                      <option value="2024">2024</option>
-                      <option value="2025">2025</option>
-                      <option value="2026">2026</option>
-                    </select>
-                    <div class="form-feedback" id="feedback-reg-batch"></div>
-                  </div>
-                  
-                  <div class="form-group">
-                    <label for="reg-admission-type">Admission Type</label>
-                    <select id="reg-admission-type">
-                      <option value="Regular">Regular</option>
-                      <option value="Lateral Entry">Lateral Entry</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Section 3: Professional & Current Status -->
-              <div class="form-section">
-                <h4 class="form-section-title"><i class="fa-solid fa-briefcase"></i> Professional Details</h4>
-                
-                <div class="form-row">
-                  <div class="form-group">
-                    <label for="reg-status">Current Status *</label>
-                    <select id="reg-status" required>
-                      <option value="">Select Current Status</option>
-                      <option value="Employed">Employed (Corporate / Gov / PSU)</option>
-                      <option value="Higher Studies">Higher Studies (M.Tech / MBA / Ph.D)</option>
-                      <option value="Entrepreneur">Entrepreneur / Startup Founder</option>
-                      <option value="Preparing for Exams">Preparing for Exams (UPSC / GATE)</option>
-                      <option value="Self-employed">Self-employed / Family Business</option>
-                      <option value="Other">Not Currently Working / Other</option>
-                    </select>
-                    <div class="form-feedback" id="feedback-reg-status"></div>
-                  </div>
-                  
-                  <div class="form-group">
-                    <label for="reg-city">Current City *</label>
-                    <input type="text" id="reg-city" required placeholder="Current city of residence">
-                    <div class="form-feedback" id="feedback-reg-city"></div>
-                  </div>
-                </div>
-
-                <div class="form-row">
-                  <div class="form-group">
-                    <label for="reg-company">Organization Name (Optional)</label>
-                    <input type="text" id="reg-company" placeholder="e.g. TCS, AKTU, self-employed">
-                  </div>
-                  <div class="form-group">
-                    <label for="reg-designation">Designation / Role / Course (Optional)</label>
-                    <input type="text" id="reg-designation" placeholder="e.g. Software Engineer, IAS Officer">
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label for="reg-linkedin">LinkedIn Profile URL (Optional)</label>
-                  <input type="url" id="reg-linkedin" placeholder="https://linkedin.com/in/username">
-                  <div class="form-feedback" id="feedback-reg-linkedin"></div>
-                </div>
-              </div>
-
-              <!-- Section 4: Alumni Engagement & Support -->
-              <div class="form-section">
-                <h4 class="form-section-title"><i class="fa-solid fa-handshake-angle"></i> Alumni Engagement</h4>
-                
-                <div class="form-row">
-                  <div class="form-group">
-                    <label for="reg-contribute">Willing to contribute to Alma Mater? *</label>
-                    <select id="reg-contribute" required>
-                      <option value="Yes">Yes, I am willing</option>
-                      <option value="Maybe in future">Maybe in the future</option>
-                      <option value="No">No, not at this time</option>
-                    </select>
-                  </div>
-                  
-                  <div class="form-group">
-                    <label for="reg-spotlight">Opt-in for Alumni Success Spotlights? *</label>
-                    <select id="reg-spotlight" required>
-                      <option value="Yes">Yes, interested</option>
-                      <option value="Maybe later">Maybe later</option>
-                      <option value="No">No, thank you</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="form-group" id="contribution-checkboxes-group" style="margin-top: 10px;">
-                  <label style="margin-bottom: 8px; display: block;">How would you like to contribute? (Select all that apply)</label>
-                  <div class="checkbox-grid">
-                    <label class="checkbox-container">
-                      <input type="checkbox" name="contribution" value="Career Guidance / Mentorship">
-                      <span>Career Guidance / Mentorship</span>
-                    </label>
-                    <label class="checkbox-container">
-                      <input type="checkbox" name="contribution" value="Internship Opportunities">
-                      <span>Internship Opportunities</span>
-                    </label>
-                    <label class="checkbox-container">
-                      <input type="checkbox" name="contribution" value="Placement Support / Referrals">
-                      <span>Placement Support / Referrals</span>
-                    </label>
-                    <label class="checkbox-container">
-                      <input type="checkbox" name="contribution" value="Guest Lecture / Expert Session">
-                      <span>Guest Lecture / Expert Session</span>
-                    </label>
-                    <label class="checkbox-container">
-                      <input type="checkbox" name="contribution" value="Startup / Entrepreneurship Guidance">
-                      <span>Startup Guidance</span>
-                    </label>
-                    <label class="checkbox-container">
-                      <input type="checkbox" name="contribution" value="Higher Studies Guidance">
-                      <span>Higher Studies Guidance</span>
-                    </label>
-                    <label class="checkbox-container">
-                      <input type="checkbox" name="contribution" value="Alumni Chapter Volunteering">
-                      <span>Chapter Volunteering</span>
-                    </label>
-                    <label class="checkbox-container">
-                      <input type="checkbox" name="contribution" value="Event Coordination">
-                      <span>Event Coordination</span>
-                    </label>
-                    <label class="checkbox-container">
-                      <input type="checkbox" name="contribution" value="Other">
-                      <span>Other Support</span>
-                    </label>
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group form-checkbox-group" style="margin-bottom: 20px;">
-                <label class="checkbox-container" style="display: flex; gap: 10px; align-items: flex-start; font-weight: normal; font-size: 0.8rem; color: var(--text-sub); cursor: pointer;">
-                  <input type="checkbox" id="reg-disclaimer" required style="width: auto; margin-top: 3px; cursor: pointer;">
-                  <span>I acknowledge that this submission is a proposed expression of interest and does not grant automatic membership or voting rights. All credentials are subject to administrative verification against official college databases. *</span>
-                </label>
-                <div class="form-feedback" id="feedback-reg-disclaimer"></div>
-              </div>
-
-              <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 16px; line-height: 1.4;">
-                <i class="fa-solid fa-circle-info" style="color: var(--accent); margin-right: 4px;"></i> Submission of this form is strictly for database coordination. No financial transactions are supported or requested.
-              </div>
-
-              <button type="submit" class="btn btn-primary btn-block" id="reg-submit-btn">
-                <span id="btn-text">Submit Request</span>
-                <span class="spinner" id="btn-spinner"><i class="fa-solid fa-spinner fa-spin"></i></span>
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Contact / Social -->
   <section id="contact" class="contact-section scroll-reveal">
     <div class="container">
@@ -468,10 +217,13 @@
           <h4 style="color: #fff;">Navigation</h4>
           <ul>
             <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="events.html">Alumni Events</a></li>
             <li><a href="directory.html">Alumni Directory</a></li>
-            <li><a href="opportunities.html">Opportunities &amp; Jobs</a></li>
-            <li><a href="transparency.html">Financials &amp; Transparency</a></li>
-            <li><a href="#register">Register / Join</a></li>
+            <li><a href="opportunities.html">Jobs &amp; Internships</a></li>
+            <li><a href="transparency.html">Financial Contribution</a></li>
+            <li><a href="welfare.html">Welfare &amp; Assistance</a></li>
+            <li><a href="register.html">SignUp/Login</a></li>
           </ul>
         </div>
         <div class="footer-links-col">
@@ -486,10 +238,21 @@
           <h4 style="color: #fff;">Contact Information</h4>
           <p style="margin-bottom: 8px;">Campus Address: Akbarpur – Tanda Road, Katariya Yakoobpur, Ambedkar Nagar 224122</p>
           <p style="margin-bottom: 8px;">Email: <a href="mailto:alumnicell@recabn.ac.in" style="color: #b0c4de; text-decoration: underline;">alumnicell@recabn.ac.in</a></p>
-          <div class="social-links" style="margin-top: 12px;">
-            <a href="https://www.linkedin.com/company/alumni-cell-rajkiya-engineering-college-ambedkar-nagar/" target="_blank" rel="noopener" style="color: #b0c4de; display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem;" class="footer-social-link">
-              <i class="fa-brands fa-linkedin" style="font-size: 1.2rem; color: #0a66c2;"></i> Alumni Cell LinkedIn
-            </a>
+          <div style="margin-top: 12px;">
+            <h4 style="color: #fff; margin-bottom: 8px;">Connect With Us</h4>
+            <div class="social-icons">
+              <a href="#" aria-label="WhatsApp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+              <a href="#" aria-label="Telegram" title="Telegram"><i class="fa-brands fa-telegram"></i></a>
+              <a href="#" aria-label="Instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="#" aria-label="Email" title="Email"><i class="fa-solid fa-envelope"></i></a>
+              <a href="#" aria-label="College Web" title="College Web"><i class="fa-solid fa-globe"></i></a>
+            </div>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+              <a href="#"><i class="fab fa-telegram"></i> Telegram</a>
+              <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+            </div>
           </div>
         </div>
       </div>

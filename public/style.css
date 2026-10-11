@@ -208,7 +208,21 @@ section {
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 8px;
+}
+
+.nav-actions > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  border: 1px solid;
+  border-radius: var(--border-radius);
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 .mobile-toggle {
@@ -1430,6 +1444,70 @@ p {
   color: var(--text-sub);
 }
 
+.welfare-section {
+  max-width: 760px;
+  margin: 0 auto 60px;
+  padding: 32px;
+  background: var(--bg-gray);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+}
+
+.simple-content-page {
+  min-height: 60vh;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 140px 20px 80px;
+}
+
+.simple-content-card {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  background: var(--bg-gray);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.simple-content-card h2 {
+  margin-bottom: 16px;
+  color: var(--primary);
+}
+
+.simple-content-card p {
+  color: var(--text-sub);
+  line-height: 1.7;
+}
+
+.welfare-section h2 {
+  margin-bottom: 12px;
+  color: var(--primary);
+}
+
+.simple-content-card,
+.welfare-section {
+  box-shadow: var(--shadow-sm);
+}
+
+.welfare-description {
+  margin-bottom: 24px;
+  color: var(--text-sub);
+  line-height: 1.6;
+}
+
+.welfare-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+@media (max-width: 600px) {
+  .simple-content-card,
+  .welfare-section {
+    padding: 24px;
+  }
+}
+
 input, select, textarea {
   width: 100%;
   padding: 10px 14px;
@@ -1791,6 +1869,12 @@ input:focus, select:focus, textarea:focus {
   .nav-actions .btn {
     display: none;
   }
+
+  .nav-actions > a {
+    display: inline-flex;
+    padding: 6px 8px;
+    font-size: 0.7rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1829,6 +1913,26 @@ input:focus, select:focus, textarea:focus {
   .form-row {
     grid-template-columns: 1fr;
     gap: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-container {
+    gap: 8px;
+    padding: 0 12px;
+  }
+
+  .nav-actions {
+    gap: 4px;
+  }
+
+  .nav-actions > a {
+    padding: 6px;
+    font-size: 0.65rem;
+  }
+
+  .logo-subtitle {
+    display: none;
   }
 }
 
